@@ -34,7 +34,8 @@ dependencies {
 ---
 
 - ERD
-    
+    ![파일확장자erd](https://user-images.githubusercontent.com/80368511/224299465-61a0f99e-b540-43f3-aed6-2a367421b103.PNG)
+
 
 ---
 
