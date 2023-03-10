@@ -46,7 +46,7 @@
                         ${customFileExtension.fileExtensionName}</button>
                 <button id="${customFileExtension.fileExtensionSeq}" class="${customFileExtension.fileExtensionSeq}"
                         <c:if test="${customFileExtension.fileExtensionVisibility eq 'HIDE'}">disabled</c:if>
-                        onclick="updateFixedFileExtensionVisibilityRequest(this.id)">x</button>
+                        onclick="updateCustomFileExtensionVisibilityRequest(this.id)">x </button>
             </c:forEach>
         </div>
 
@@ -60,8 +60,6 @@
 
     function updateFixedFileExtensionVisibilityRequest(fileExtensionSeq) {
 
-        console.log(fileExtensionSeq)
-
         $.ajax({
             type : "PATCH",
             url : "/fileextension",
@@ -69,7 +67,7 @@
             success:function(result){
                 console.log(result)
             },
-            error:function(error){ //실패 이벤트 핸들러
+            error:function(error){
                 console.log(error);
             }
         });
@@ -82,9 +80,6 @@
             fileExtensionName: $("#addCustomFileExtensionName").val()
         };
 
-        console.log(JSON.stringify(data));
-        console.log(data);
-
         $.ajax({
             type : "POST",
             url : "/fileextension",
@@ -92,14 +87,28 @@
             contentType: "application/json; charset=utf-8",
             success:function(result){
 
-                let fileExtensionSeq = result.fileExtensionSeq
-                console.log(fileExtensionSeq)
-
                 $("#viewCustomFileExtension")
-                    .append("<button class='result.fileExtensionSeq'>" + result.fileExtensionName + "</button>" +
-                    "<button id='result.fileExtensionSeq' class='result.fileExtensionSeq' >x</button>");
+                    .append("<button class=" + result.fileExtensionSeq + ">" + result.fileExtensionName + "</button>" +
+                    "<button id=" + result.fileExtensionSeq + "class=" + result.fileExtensionSeq + "> x </button>");
             },
             error:function(error){ //실패 이벤트 핸들러
+                console.log(error);
+            }
+        });
+    }
+
+    function updateCustomFileExtensionVisibilityRequest(fileExtensionSeq) {
+
+        $(this.class).attr("disabled", true)
+
+        $.ajax({
+            type : "PATCH",
+            url : "/fileextension",
+            data: {fileExtensionSeq : Number(fileExtensionSeq)},
+            success:function(result){
+                console.log(result)
+            },
+            error:function(error){
                 console.log(error);
             }
         });
