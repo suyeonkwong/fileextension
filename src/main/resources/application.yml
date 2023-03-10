@@ -1,14 +1,16 @@
 spring:
 
-  config:
-    import: classpath:application-db.yml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://fileextension.cmd8qegz2c7y.ap-northeast-2.rds.amazonaws.com:3306/test?useSSL=false
+    username: root
+    password: fileextension
 
   jpa:
-
-    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
-      ddl-auto: create
-
+      ddl-auto: validate
+    show-sql: true
     properties:
       hibernate:
         format_sql: true
