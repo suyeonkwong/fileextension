@@ -19,7 +19,7 @@ master
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'com.h2database:h2'
+	implementation 'com.mysql:mysql-connector-j:8.0.31'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'javax.servlet:jstl'
 	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
@@ -36,7 +36,6 @@ dependencies {
 
 - ERD
     ![파일확장자erd](https://user-images.githubusercontent.com/80368511/224299465-61a0f99e-b540-43f3-aed6-2a367421b103.PNG)
-
 
 ---
 
@@ -59,3 +58,6 @@ dependencies {
  그 이유는 지워진 데이터의 기록을 따로 하지 않고 이미 사용자가 다시 입력한 확장자를 다시 사용할 수 있기 때문입니다. 만약 delete를 하고 다시 해당 확장자를 추가하지 않으면
  괜찮지만 다시 사용한다고 하면 비효율적이기 때문입니다. 
    + 예외처리같은 경우 요구조건의 범위(200개 이상 추가 불가)나 다른 문제사항을 생각하여 해결하였습니다. 
+   
+- 최종 화면
+![실행화면](https://user-images.githubusercontent.com/80368511/224419117-5790bd4d-9c87-4417-944c-bdbb5af323ef.PNG)
