@@ -3,7 +3,7 @@
 ## description
 
 - projectName : fileextension
-- address : 3.37.18.8:8080/fileextension
+- address : 3.37.18.8:8080/fileextension/fileextension : ip:port/[name]/url
 - git branch :
 
 ```
