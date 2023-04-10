@@ -1,9 +1,9 @@
-# 파일 확장자 차단 과제
+# 파일 확장자 차단
 
 ## description
 
 - projectName : fileextension
-- address : 3.37.18.8:8080/fileextension : [ip:port/url]
+- address : 
 - git branch :
 
 ```
@@ -36,9 +36,6 @@ dependencies {
 
 ---
 
-- ERD
-    ![파일확장자erd](https://user-images.githubusercontent.com/80368511/224299465-61a0f99e-b540-43f3-aed6-2a367421b103.PNG)
-
 ---
 
 - Architecture : layered architecture
@@ -62,4 +59,3 @@ dependencies {
    + 예외처리같은 경우 요구조건의 범위(200개 이상 추가 불가)나 다른 문제사항을 생각하여 해결하였습니다. 
    
 - 최종 화면
-![실행화면](https://user-images.githubusercontent.com/80368511/224419117-5790bd4d-9c87-4417-944c-bdbb5af323ef.PNG)
